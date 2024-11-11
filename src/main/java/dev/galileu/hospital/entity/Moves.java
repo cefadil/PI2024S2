@@ -1,5 +1,7 @@
 package dev.galileu.hospital.entity;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -19,10 +21,17 @@ public class Moves {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Equipment equipment;
+
     @ManyToOne (fetch = FetchType.LAZY, cascade = CascadeType.ALL)    
     private User user;
 
     @ManyToOne (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Department department;
+
+    private LocalDateTime date; 
+
+    private String observacoes;
 
 }

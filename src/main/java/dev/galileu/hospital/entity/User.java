@@ -24,6 +24,7 @@ public class User {
     String senha;
     String matricula;
     String fone;
+    String Role;
 
     @ManyToOne (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     Department department;
