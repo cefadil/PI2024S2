@@ -1,5 +1,9 @@
 package dev.galileu.hospital.repository;
 
-public class MovesRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import dev.galileu.hospital.entity.Moves;
+
+public interface MovesRepository extends JpaRepository<Moves, Long> {
 
 }
